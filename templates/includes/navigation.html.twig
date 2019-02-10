@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default navbar-static-top mega">
+    <div class="container">
+        {% include 'includes/navigation/logo.html.twig' %}
+
+        <!-- Navbar Links -->
+        <div id="navbar" class="navbar-collapse collapse">
+            {{ render(controller('App\\Controller\\SiteController::menuServices')) }}
+
+
+            <!-- Navbar Links Right -->
+            {% include 'includes/navigation/shopping.html.twig' %}
+
+        </div><!--/.navbar-collapse -->
+    </div><!-- / .container -->
+</nav><!-- / .navbar -->

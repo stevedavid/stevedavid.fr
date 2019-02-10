@@ -1,0 +1,239 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="fs-slider-hero">
+        <div class="fs-slider">
+
+            <!-- Slide 1 -->
+            <div class="fs-slider-item fs-slide-1" style="background-image: url(../assets/images/home-slider/1.jpg);">
+                <div class="bg-overlay">
+
+                    <!-- Hero Content -->
+                    <div class="hero-content-wrapper">
+                        <div class="hero-content">
+
+                            <h1 class="hero-lead wow fadeInUp" data-wow-duration="2s">magnétiseur & médium</h1>
+                            <h2 class="h-alt hero-subheading wow fadeIn" data-wow-delay=".5s" data-wow-duration="1.5s">Steve David</h2>
+                            <a href="#about" class="btn wow fadeIn" data-wow-delay=".7s" data-wow-duration="2s">En savoir plus</a>
+
+                        </div>
+                    </div>
+
+                </div><!-- / .bg-overlay -->
+            </div><!-- / .fs-slide-1 -->
+
+
+            <!-- Slide 2 -->
+            <div class="fs-slider-item fs-slide-2" style="background-image: url(../assets/images/home-slider/2.jpg);">
+                <div class="bg-overlay">
+
+                    <!-- Hero Content -->
+                    <div class="hero-content-wrapper">
+                        <div class="hero-content">
+                            <h1 class="hero-lead">Venez <br/> vous <br/> détendre</h1>
+                            <h4 class="h-alt hero-subheading wow fadeInUp">relaxation / rééquilibrage / contact émotionnel</h4>
+                            <a href="{{ path('category_show', {slugCategory: 'soins-energetiques'}) }}" class="btn btn-light wow fadeInDown">En savoir plus</a>
+
+                        </div>
+                    </div>
+
+                </div><!-- / .bg-overlay -->
+            </div><!-- / .fs-slide-2 -->
+
+
+            <!-- Slide 3 -->
+            <div class="fs-slider-item fs-slide-3" style="background-image: url(../assets/images/home-slider/3.jpg);">
+                <div class="bg-overlay">
+
+                    <!-- Hero Content -->
+                    <div class="hero-content-wrapper">
+                        <div class="hero-content">
+
+                            <h4 class="h-alt hero-subheading">tarots / oracles / pendules</h4>
+                            <h1 class="hero-lead"><span>Recevez votre</span> <br/> guidance divinatoire</h1>
+
+                            <a href="{{ path('category_show', {slugCategory: 'consultations-orales'}) }}" class="btn-light">En savoir plus</a>
+
+                        </div>
+                    </div>
+
+                </div><!-- / .bg-overlay -->
+            </div><!-- / .fs-slide-3 -->
+
+
+        </div><!-- / .fs-slider -->
+
+        <!-- Scroller -->
+        <a href="#services" class="scroller">
+            <span class="scroller-text">faites défiler</span>
+            <span class="linea-basic-magic-mouse"></span>
+        </a>
+
+    </div><!-- / .fs-slider-hero -->
+
+    <section id="about" class="container">
+        <div class="row section">
+
+            <header class="sec-heading">
+                <h2>Bienvenue</h2>
+                <span class="subheading">Prenez le temps de lire ma présentation</span>
+            </header>
+
+            <div class="col-md-offset-1 col-md-5">
+                <p>Je m'apelle Steve David et je suis magnétiseur exerçant sur Montpellier. Je suis également médium et voyant. Ceci étant posé, j'utilise ces capacités selon une approche thérapeutique propre et définie pour chacun de mes consultants et consultantes.</p>
+            </div>
+            <div class="col-md-5">
+                <p>Je dispense des séances d'une heure pendant lesquelles j'interviens par l'utilisation de différentes méthodes relevant toutes d'une approche ésotérique et spirituelle. Ceci afin de parvenir à un seul et même but partagé entre vous et moi : votre guérison.</p>
+            </div>
+        </div><!-- / .row -->
+        <div class="row ws-m">
+            <div class="col-md-12 text-center">
+                <button class="btn-ghost">Me contacter</button>
+            </div>
+        </div>
+    </section><!-- / .container -->
+
+    <div class="gray-bg">
+        <section class="container ft-steps-numbers">
+            <div class="row section">
+
+                <header class="sec-heading ws-s">
+                    <h2>Mon approche</h2>
+                    <span class="subheading">Sur quel plan j'aborde les choses avec vous.</span>
+                </header>
+
+                <!-- Step 1 -->
+                <div class="col-lg-4 col-md-6 mb-sm-100 ft-item wow fadeIn" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+                    <span class="ft-nbr">01</span>
+                    <h4>Energétique</h4>
+                    <p>Grâce au magnétisme, j'interviens directement dans la manipulation des énergies à but thérapeutique tant sur un plan physique que psychologique.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-lg-4 col-md-6 mb-sm-100 ft-item wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;">
+                    <span class="ft-nbr">02</span>
+                    <h4>Spirituelle</h4>
+                    <p>Ma sensibilité me rendant tout naturellement empathique et à l'écoute, j'accorde une grande importance à la spiritualité dans mon approche thérapeutique. Elle est essentiellement basée sur des concepts et notions issus de la spiritualité.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-lg-4 col-md-6 ft-item wow fadeIn" data-wow-duration="1s" data-wow-delay=".6s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.6s; animation-name: fadeIn;">
+                    <span class="ft-nbr">03</span>
+                    <h4>Psychique</h4>
+                    <p>Mes capacités médiumniques et mes perceptions extra-sensorielles innées me permettent d'entrer en contact avec des champs d'informations relevant de l'invisible. Ceci me permet d'adopter une approche toute personnalisée.</p>
+                </div>
+
+            </div><!-- / .row -->
+
+            <!-- CTA Button -->
+            <div class="row ws-m">
+                <div class="text-center">
+                    <button class="btn-ghost">Me contacter</button>
+                </div>
+            </div><!-- / .row -->
+
+        </section>
+    </div>
+
+    <section class="container section team-3col">
+        <div class="row">
+
+            <header class="sec-heading">
+                <h2>Qui je suis ?</h2>
+                <span class="subheading">A votre service</span>
+            </header>
+
+            <!-- Member 1 -->
+            <div class=" col-lg-offset-4 col-lg-4 col-md-6 mb-sm-50">
+                <div class="t-item wow fadeIn" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+
+                    <!-- Image -->
+                    <div class="t-image">
+                        <img src="/assets/images/steve.jpg" alt="Team Member" class="img-responsive">
+                        <div class="t-description">
+                            <div class="content-wrapper">
+                                <h4 class="h-alt">Intro</h4>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="t-info">
+                        <h4 class="t-name">Steve David</h4>
+                        <span class="t-role">magnétiseur & médium</span>
+                        <ul class="social-links">
+                            <li><a href="https://www.facebook.com/steve.david.therapeute"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UC7dE37VYBNnooSjLI77IybQ"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/stevedavid/"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div><!-- / .t-item -->
+            </div><!-- / .col-md-4 -->
+        </div><!-- / .row -->
+        <!-- CTA Button -->
+        <div class="row" style="margin-top: 50px;">
+            <div class="text-center">
+                <button class="btn-ghost">Me contacter</button>
+            </div>
+        </div><!-- / .row -->
+    </section><!-- / .contianer -->
+
+    <div id="about" class="gray-bg">
+        <section class="container section ft-cards-2">
+
+            <header class="sec-heading">
+                <h2>Mes services</h2>
+                <span class="subheading">Voyez ce que je peux vous proposer</span>
+            </header>
+
+            <div class="row">
+
+                {% for service in services %}
+                    {% if loop.length % 2 == 0 %}
+                        <div class="col-md-6">
+                    {% endif %}
+
+                    <!-- Item 1 -->
+                    <div class="ft-card-item wow fadeInUp" data-wow-duration="1.2s" style="visibility: visible; animation-duration: 1.2s; animation-name: fadeInUp;">
+                        <img src="{{ service.imagesPath(1) ~ '/' ~ service.images[0] }}" alt="Feature Image">
+                        <div class="ft-content">
+                            <h5>
+                                {{ service.name }}
+                                <small>{{ service.category.name }}</small>
+                            </h5>
+
+                            <p>{{ service.summary|slice(0, 50) ~ '...' }}</p>
+                            <a href="{{ path('service_show', service.params) }}" class="link-btn">En savoir plus <span class="linea-arrows-slim-right"></span></a>
+                        </div>
+                    </div><!-- / .ft-card-item -->
+
+
+                    {% if loop.length % 2 == 0 %}
+                        </div><!-- / .col-md-6 -->
+                    {% endif %}
+                {% endfor %}
+            </div><!-- / .row -->
+
+            <!-- CTA Button -->
+            <div class="row">
+                <div class="text-center">
+                    <button class="btn-ghost">Me contacter</button>
+                </div>
+            </div><!-- / .row -->
+        </section>
+    </div>
+
+
+
+{% endblock %}
+
+{% block js %}
+    <script>
+        jQuery(function($) {
+            $('section').find('.btn-ghost').launchTunnel();
+        });
+
+    </script>
+{% endblock %}

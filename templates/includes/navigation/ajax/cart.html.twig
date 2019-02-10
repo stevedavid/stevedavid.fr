@@ -1,0 +1,32 @@
+<li class="dropdown-header">Votre identité</li>
+<li class="dropdown-identity">
+    <ul>
+        <li>Prénom : <span>{{ cart.identite.prenom }}</span></li>
+        <li>Nom : <span>{{ cart.identite.nom }}</span></li>
+        <li>Téléphone : <span>{{ cart.identite.telephone }}</span></li>
+    </ul>
+</li>
+<li role="separator" class="divider cart-sep-top"></li>
+<li class="dropdown-header">Dernier service visité</li>
+<li>
+    <div class="cart-item">
+        {% if cart.service is null %}
+            <p class="cp-price">N/A</p>
+        {% else %}
+            <a href="{{ path('service_show', cart.service.params) }}"><img width="60" src="{{ cart.service.imagesPath(1) ~ '/' ~ cart.service.images[0] }}" alt="Product Name" class="p-thumb"></a>
+            <a href="{{ path('service_show', cart.service.params) }}" class="cp-name">{{ cart.service.name }}</a>
+            <p class="cp-price">{{ cart.service.price }} €</p>
+        {% endif %}
+    </div>
+</li>
+
+<li role="separator" class="divider cart-sep-bot"></li>
+
+<li class="dropdown-header">Disponibilité</li>
+<li>
+    <h6 class="item-totals"><span>{{ cart.disponibilite }}</span></h6>
+</li>
+<li class="cart-btns">
+    <a href="shop/shop-checkout.html" class="btn-ghost btn-block">Me contacter</a>
+    <a href="shop/shop-checkout.html" class="btn btn-block">Effacer</a>
+</li>

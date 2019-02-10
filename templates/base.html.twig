@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}Bienvenue{% endblock %} | Steve DAVID, magnétiseur & médium</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/assets/styles/vendor/bootstrap.min.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/assets/fonts/et-lineicons/css/style.css">
+    <link rel="stylesheet" href="/assets/fonts/linea-font/css/linea-font.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome/css/font-awesome.min.css">
+    <!-- Slider -->
+    <link rel="stylesheet" href="/assets/styles/vendor/slick.css">
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="/assets/styles/vendor/magnific-popup.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="/assets/styles/vendor/animate.css">
+
+
+    <!-- Definity CSS -->
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/responsive.css">
+
+    <link rel="stylesheet" href="/assets/override.css">
+
+    <!-- JS -->
+    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body id="page-top">
+
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="mmContact-container" style="display: none;">
+    <span class="close">
+        <i class="fa fa-close"></i>
+    </span>
+    <div class="mmContact-wrapper" style="overflow: hidden;">
+    </div>
+</div>
+
+<!-- ========== Preloader ========== -->
+
+<div class="preloader">
+    <img src="/assets/images/loader.svg" alt="Loading...">
+</div>
+
+
+
+<!-- ========== Navigation ========== -->
+
+{% include 'includes/navigation.html.twig' %}
+
+
+
+<!-- ========== Enter Your Content Here ========== -->
+
+{% block content %}{% endblock %}
+
+
+
+<!-- ========== Footer Widgets ========== -->
+
+{% include 'includes/footer.html.twig' %}
+
+{% include 'tunnel/1.html.twig' %}
+
+
+
+<!-- ========== Scripts ========== -->
+
+<script src="/assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script src="/assets/js/vendor/google-fonts.js"></script>
+<script src="/assets/js/vendor/jquery.easing.js"></script>
+<script src="/assets/js/vendor/jquery.waypoints.min.js"></script>
+<script src="/assets/js/vendor/bootstrap.min.js"></script>
+<script src="/assets/js/vendor/bootstrap-hover-dropdown.min.js"></script>
+<script src="/assets/js/vendor/smoothscroll.js"></script>
+<script src="/assets/js/vendor/jquery.localScroll.min.js"></script>
+<script src="/assets/js/vendor/jquery.scrollTo.min.js"></script>
+<script src="/assets/js/vendor/jquery.stellar.min.js"></script>
+<script src="/assets/js/vendor/jquery.parallax.js"></script>
+<script src="/assets/js/vendor/slick.min.js"></script>
+<script src="/assets/js/vendor/jquery.easypiechart.min.js"></script>
+<script src="/assets/js/vendor/countup.min.js"></script>
+<script src="/assets/js/vendor/isotope.min.js"></script>
+<script src="/assets/js/vendor/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/vendor/wow.min.js"></script>
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2&appId=169522666463582&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Definity JS -->
+<script src="/assets/js/main.js"></script>
+
+<script>
+    var target_url = '';
+</script>
+
+<script>
+    /**
+     * Fonction de lancement de la
+     * première modal du tunnel.
+     */
+    (function($) {
+        $.fn.launchTunnel = function() {
+            return this.on('click', function(e) {
+                e.preventDefault();
+                $('#tunnel-step-1').modal('show');
+            });
+        };
+    })(jQuery);
+</script>
+
+<script>
+    /**
+     * Fonction pour réactualiser le panier
+     */
+    var triggerCart = function() {
+
+        var $cartIcon = $('.cart-nav').find('.ico');
+        var originalIcon = $cartIcon.prop('innerHTML');
+        var $cartDropdown = $('.cart-dropdown');
+        var $firstLoader = $('<img/>')
+            .attr('src', '/assets/images/loader.gif')
+        ;
+
+        var $secondLoader = $firstLoader.clone();
+
+        $cartDropdown.css('min-height', '60px').html($firstLoader.css({
+            height: '40px',
+            width: '40px',
+            margin: '10px',
+            marginTop: '-20px',
+            marginLeft: '-20px',
+            left: '50%',
+            top: '50%',
+            position: 'absolute',
+        }).prop('outerHTML'));
+
+        $cartIcon.html($secondLoader.css({
+            height: '12px',
+            width: '12px',
+        }).prop('outerHTML'));
+
+        $.ajax({
+            url: '{{ path('site_cart') }}',
+            method: 'get',
+            success: function(response) {
+                $cartIcon.html(originalIcon);
+                $cartDropdown.html(response)
+            },
+        });
+
+    };
+</script>
+
+<script>
+    /**
+     * Fonctions du tunnel
+     */
+
+    // vers l'étape 2
+    jQuery(function($) {
+        $('body').on('submit', '#tunnel-step-1 form', function (e) {
+            e.preventDefault();
+            $(this).parents('.modal').modal('hide');
+            var $button = $(this).find('input[type=submit]:focus');
+            var choice = $button.data('choice');
+            $.ajax({
+                url: '{{ path('tunnel_2') }}',
+                method: 'POST',
+                data: {choice: choice},
+                success: function (data) {
+                    $(data).modal('show');
+                },
+                error: function () {
+                },
+            });
+
+        });
+
+        // vers l'étape 3
+        $('body').on('submit', '#tunnel-step-2 form', function (e) {
+            e.preventDefault();
+            var $modal = $(this).parents('.modal');
+            var $numeroTelephone = $modal.find('#inpt-name-forms');
+            if ($numeroTelephone.val() == '') {
+                $modal.addClass('bounce');
+                setTimeout(function () {
+                    $modal.removeClass('bounce');
+                    $numeroTelephone.css('border-color', '#D61214');
+                }, 1000);
+                return false;
+            }
+
+            $modal.modal('hide');
+            $.ajax({
+                url: '{{ path('tunnel_3') }}',
+                method: 'POST',
+                data: {tel: $numeroTelephone.val()},
+                success: function (data) {
+                    $(data).modal('show');
+                    triggerCart();
+                },
+                error: function () {
+                },
+            });
+        });
+
+        // vers l'étape 4
+        $('body').on('submit', '#tunnel-step-3 form', function (e) {
+            e.preventDefault();
+            var $modal = $(this).parents('.modal');
+            var $prenomInput = $modal.find('#contact-prenom');
+            var $nomInput = $modal.find('#contact-nom');
+            if ($prenomInput.val() == '' || $nomInput.val() == '') {
+                $modal.addClass('bounce');
+                setTimeout(function () {
+                    $modal.removeClass('bounce');
+                    if ($prenomInput.val() == '') $prenomInput.css('border-color', '#D61214'); else $prenomInput.css('border-color', '#ddd');
+                    if ($nomInput.val() == '') $nomInput.css('border-color', '#D61214'); else $nomInput.css('border-color', '#ddd');
+                }, 1000);
+                return false;
+            }
+
+            $modal.modal('hide');
+            $.ajax({
+                url: '{{ path('tunnel_4') }}',
+                method: 'POST',
+                data: {prenom: $prenomInput.val(), nom: $nomInput.val()},
+                success: function (data) {
+                    $(data).modal('show');
+                    triggerCart();
+                },
+                error: function () {
+                },
+            });
+        });
+    });
+</script>
+
+<script>
+    jQuery(function($) {
+        $('#nav-contact').find('a').launchTunnel();
+        $('.cart-nav').find('.cart-btns > a:first-child').launchTunnel();
+        $('#nav-contact').find('a').launchTunnel();
+    });
+</script>
+
+{% block js %}{% endblock %}
+</body>
+</html>

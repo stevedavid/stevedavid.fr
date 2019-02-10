@@ -1,0 +1,35 @@
+<ul class="nav navbar-nav">
+
+    <li>
+        <a href="{{ path('site_index') }}">Accueil</a>
+    </li><!-- / Blog -->
+
+    <li>
+        <a href="#">Présentation</a>
+    </li><!-- / Blog -->
+
+    <!-- Home -->
+    <li class="dropdown mega-fw">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <div class="row">
+                {% for category in categories %}
+                <!-- Multi Page -->
+                    <div class="col-lg-{{ 12 / loop.length }} mb-sm-30">
+                        <li class="dropdown-header">{{ category.name }}</li>
+                        <li role="separator" class="divider"></li>
+                        {% for service in category.services %}
+                            <li><a href="{{ path('service_show', {slugCategory: category.slug, slugService: service.slug}) }}">{{ service.name }}</a></li>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div><!-- / .row -->
+        </ul><!-- / .dropdown-menu -->
+    </li><!-- / Home -->
+
+    <li id="nav-contact">
+        <a href="#">Contact</a>
+    </li><!-- / Blog -->
+
+
+</ul><!-- / .nav .navbar-nav -->

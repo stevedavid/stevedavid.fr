@@ -1,0 +1,243 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <header class="page-title pt-large pt-dark pt-plax-lg-dark" style="background-image: url('/assets/images/header.jpg'); background-position: 0 50%; background-size: 100%"
+            data-stellar-background-ratio="0.4">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <h1>{{ service.name }}</h1>
+                    <span class="subheading">{{ service.category.name }}</span>
+                </div>
+                <ol class="col-sm-6 text-right breadcrumb">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li class="active">{{ service.category.name }}</li>
+                </ol>
+
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- ========== Cart Items - (checkout table) ========== -->
+
+    <div class="container section">
+        <div class="row ws-m">
+
+            <div class="col-md-12">
+                <ul class="product-meta">
+                    <li><span style="text-transform: uppercase">Catégorie</span>: <a href="#">{{ service.category.name }}</a></li>
+                </ul>
+            </div>
+
+            <!-- Prodcut Images -->
+            <div class="col-md-1">
+                <ul class="prod_single_thumbs_slider">
+                    {% for image in service.images %}
+                        <li><img width="60" src="{{ service.imagesPath(1) ~ '/' ~ image }}" alt="Product Thumb"></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col-md-5">
+                <ul class="prod_single_img_slider">
+                    {% for image in service.images %}
+                    <li><img class="img-responsive" src="{{ service.imagesPath(1) ~ '/' ~ image }}" alt="Product Image"></li>
+                    {% endfor %}
+                </ul>
+            </div><!-- / .col-md-6 -->
+
+
+            <!-- Product Description -->
+            <div class="col-md-5 product-info">
+                <span class="prod-cat">{{ service.category.name }}</span>
+                <h1 class="prod-name">{{ service.name }}</h1>
+                <h3 class="prod-price">{{ service.price ~ ' €' }} <span class="price-cut">/ {{ service.formattedDuration }}</span></h3>
+                <p class="prod-desc">
+                    {{ service.summary }}
+                </p>
+                <ul class="prod-rating">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                    <li>Niveau d'implication du consultant</li>
+                </ul>
+
+                <div class="prod-size">
+                    <h5>Votre disponibilité</h5>
+                    <select class="form-control" id="select-dispo">
+                        {% dump(disponibilite) %}
+                        <option value="-">&gt; Faites un choix</option>
+                        {% for k, available_disponibilite in disponibilites %}
+                            <option value="{{ k }}" {% if disponibilite == k %}selected{% endif %}>{{ available_disponibilite }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <a href="#" class="btn btn-large" id="know-more">En savoir plus</a>
+
+            </div><!-- / .col-md-5 -->
+
+        </div><!-- / .row -->
+
+
+
+        <!-- Product Info - (tabs) -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tab-sizeguide" aria-controls="tab-sizeguide" role="tab" data-toggle="tab">Informations techniques</a></li>
+                    <li role="presentation"><a href="#tab-reviews" aria-controls="tab-reviews" role="tab" data-toggle="tab">Commentaires</a></li>
+                    <li role="presentation"><a href="#tab-help" aria-controls="tab-help" role="tab" data-toggle="tab">Comment faire ?</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- Item Description -->
+                    <!-- Size Guide -->
+                    <div role="tabpanel" class="tab-pane active" id="tab-sizeguide">
+                        <table class="table table-row-highlight">
+                            <tbody>
+                            <tr>
+                                <td>Prix</td>
+                                <td>{{ service.price ~ ' €' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Consultation en face-à-face</td>
+                                <td>Oui</td>
+                            </tr>
+                            <tr>
+                                <td>Consultation à distance possible</td>
+                                <td>Oui</td>
+                            </tr>
+                            <tr>
+                                <td>Durée de la séance</td>
+                                <td>{{ service.duration ~ ' minutes' }}</td>
+                            </tr>
+                            </tbody>
+                        </table><!-- / .table -->
+                    </div><!-- / .tab-pane #tab-sizeguide -->
+
+                    <!-- Reviews -->
+                    <div role="tabpanel" class="tab-pane prod-reviews" id="tab-reviews">
+
+                        <div class="tp-review">
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fraphael.lux.1%2Fposts%2F2656359891110282&width=500" width="500" height="218" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div><!-- / .tp-review -->
+
+                        <div class="tp-review">
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Femy.magick%2Fposts%2F736962303169338%3A0&width=500" width="500" height="392" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div><!-- / .tp-review -->
+
+                        <div class="tp-review">
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fnelheen%2Fposts%2F10155267724809763%3A0&width=500" width="500" height="335" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div><!-- / .tp-review -->
+
+                    </div><!-- / .prod-reviews #tab-reviews -->
+
+                    <div role="tabpanel" class="tab-pane ft-steps-numbers" id="tab-help">
+                        <div class="ws-s"></div>
+                        <!-- Step 1 -->
+                        <div class="col-lg-4 col-md-6 mb-sm-100 ft-item">
+                            <span class="ft-nbr">01</span>
+                            <h4>Choisissez votre disponibilité</h4>
+                            <p>Sélectionnez la période où vous êtes disponible pour votre séance dans la liste déroulante en dessous de la description du service.</p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="col-lg-4 col-md-6 mb-sm-100 ft-item">
+                            <span class="ft-nbr">02</span>
+                            <h4>Cliquez sur le bouton « En savoir plus »</h4>
+                            <p>Utilisez le bouton « e savoir plus » pour lancer le tunnel de contact et renseignez les informations demandées dans les étapes qui suivront.</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="col-lg-4 col-md-6 mb-sm-100 ft-item">
+                            <span class="ft-nbr">03</span>
+                            <h4>Parlons</h4>
+                            <p>Selon si vous êtes sur votre ordinateur ou votre téléphone, utilisez le meilleur moyen pour entrer en contact avec moi et discuter de vos besoins.</p>
+                        </div>
+
+                    </div><!-- / .ft-steps-numbers #tab-help -->
+                </div>
+
+            </div>
+        </div>
+    </div><!-- / .container -->
+
+
+
+    <!-- ========== Related Items - (products section) ========== -->
+
+    <div class="gray-bg">
+        <div class="container section">
+
+            <div class="row">
+                <header class="sec-heading">
+                    <h2>Services liés</h2>
+                </header>
+
+                <!-- Shop Product -->
+                {% for service in related_services %}
+                    {% include 'service/inc/preview.html.twig' with {service: service} %}
+                {% endfor %}
+            </div><!-- / .row -->
+        </div><!-- / .container -->
+    </div><!-- / .gray-bg -->
+
+{% endblock %}
+
+{% block js %}
+<script>
+    jQuery(function($) {
+        $('#know-more').launchTunnel();
+    });
+
+    jQuery(function($) {
+
+        $('[rel=tooltip]').tooltip({
+            placement: 'bottom',
+        });
+
+    });
+
+    jQuery(function($) {
+
+        $('#select-dispo').on('change', function(e) {
+
+            var disponibilite = $(e.target).val();
+
+            if(disponibilite == '-') {
+                return false;
+            }
+
+            var data = {
+                disponibilite: disponibilite,
+            };
+
+            $.ajax({
+                url: '{{ path('service_post_dispo') }}',
+                method: 'post',
+                data: data,
+                dataType: 'json',
+                success: function(response) {
+                    console.log(response)
+                    triggerCart();
+                },
+                error: function() {},
+            });
+
+            console.log(disponibilite);
+
+        });
+
+    });
+</script>
+{% endblock %}

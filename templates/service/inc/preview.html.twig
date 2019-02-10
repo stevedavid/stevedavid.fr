@@ -1,0 +1,26 @@
+<div class="col-xs-12 col-sm-6 col-lg-4 mb-30">
+    <div class="shop-product-card">
+
+        <!-- Image/Slider -->
+        <div class="product-image-wrapper">
+            <!-- Product Actions (hover) -->
+            <a href="#" class="buy-btn"><span class="linea-mail"></span></a>
+            <a href="#" class="fav-btn"><span class="linea-basic-star"></span></a>
+
+            <!-- Product Main Image -->
+            <div class="shop-p-slider">
+                {% for image in service.images %}
+                    <a href="{{ path('service_show', service.params) }}"><img src="{{ service.imagesPath(1) ~ '/' ~ image }}" alt="Product Image 1"></a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Product Meta -->
+        <div class="product-meta">
+            <a href="{{ path('service_show', service.params) }}"><h4 class="product-name">{{ service.name }}</h4></a>
+            <span class="product-sep"></span>
+            <p class="product-price">{{ service.price ~ ' €' }} <small>/ {{ service.formattedDuration }}</small></p>
+        </div>
+
+    </div><!-- / .shop-product-card -->
+</div><!-- / .col-sm-3 -->
