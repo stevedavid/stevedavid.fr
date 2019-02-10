@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2550ae7-b1d9-461a-aa59-9454d7e10261" name="Default" comment="" />
+    <list default="true" id="f2550ae7-b1d9-461a-aa59-9454d7e10261" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/phpunit" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,19 +49,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cart.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/includes/navigation/ajax/cart.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-                  <folding>
-                    <element signature="e#574#586#0#Twig" expanded="true" />
-                    <element signature="e#770#782#0#Twig" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="ServiceController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controller/ServiceController.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -96,15 +87,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="preview.html.twig" pinned="false" current-in-tab="true">
+          <file leaf-file-name="preview.html.twig" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/service/inc/preview.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+                <state relative-caret-position="425">
+                  <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
                   <folding>
                     <element signature="e#533#545#0#Twig" expanded="true" />
                     <element signature="e#807#819#0#Twig" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="797">
+                  <caret line="74" column="6" lean-forward="false" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -327,6 +328,7 @@
         <option value="$PROJECT_DIR$/templates/site/search.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/ServiceRepository.php" />
         <option value="$PROJECT_DIR$/public/assets/override.scss" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -497,6 +499,7 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bin/dart-sass/sass.bat" />
     <property name="SearchEverywhereHistoryKey" value="override&#9;FILE&#9;file://C:/wamp64/www/v3.steve-david.com/public/assets/override.scss&#10;Service&#9;FILE&#9;file://C:/wamp64/www/v3.steve-david.com/src/Entity/Service.php&#10;menu.htm&#9;FILE&#9;file://C:/wamp64/www/v3.steve-david.com/templates/includes/navigation/menu.html.twig" />
+    <property name="add_unversioned_files" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -526,12 +529,12 @@
       <workItem from="1548221543754" duration="1139000" />
       <workItem from="1548224212056" duration="50246000" />
       <workItem from="1549196849434" duration="15598000" />
-      <workItem from="1549812949974" duration="67000" />
+      <workItem from="1549812949974" duration="318000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67050000" />
+    <option name="totallyTimeSpent" value="67301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="-5" width="1690" height="1030" extended-state="6" />
@@ -569,19 +572,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/site/search.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="56" lean-forward="false" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="e#609#619#0#Twig" expanded="true" />
-            <element signature="e#1143#1155#0#Twig" expanded="true" />
-            <element signature="e#1553#1565#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/includes/navigation/shopping.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -716,6 +706,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <marker date="1548341609528" expanded="true" signature="648:883" ph="CREATE TABLE... category" />
+            <marker date="1548341609528" expanded="true" signature="910:1321" ph="CREATE TABLE... service" />
+            <marker date="1548341609528" expanded="true" signature="1348:1453" ph="ALTER TABLE service... " />
+            <marker date="1548341609528" expanded="true" signature="1769:1825" ph="ALTER TABLE service... " />
+            <marker date="1548341609528" expanded="true" signature="1852:1871" ph="DROP TABLE c... " />
+            <marker date="1548341609528" expanded="true" signature="1898:1916" ph="DROP TABLE s... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -731,6 +729,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -755,6 +754,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
           <caret line="103" column="41" lean-forward="false" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -776,6 +776,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -950,17 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/service/inc/preview.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="e#533#545#0#Twig" expanded="true" />
-            <element signature="e#807#819#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/ServiceRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -989,6 +979,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="93" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/service/inc/preview.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding>
+            <element signature="e#533#545#0#Twig" expanded="true" />
+            <element signature="e#807#819#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="797">
+          <caret line="74" column="6" lean-forward="false" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
           <folding />
         </state>
       </provider>
