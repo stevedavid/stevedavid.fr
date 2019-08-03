@@ -112,6 +112,17 @@
 </script>
 
 <script>
+    jQuery(function($) {
+
+        $('.cart-nav').on('mouseout', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+    });
+</script>
+
+<script>
     /**
      * Fonction de lancement de la
      * première modal du tunnel.
@@ -123,6 +134,12 @@
                 $('#tunnel-step-1').modal('show');
             });
         };
+        $.fn.resetCart = function() {
+            return this.on('click', function(e) {
+                e.preventDefault();
+                triggerCart(true)
+            });
+        };
     })(jQuery);
 </script>
 
@@ -130,7 +147,15 @@
     /**
      * Fonction pour réactualiser le panier
      */
-    var triggerCart = function() {
+    var triggerCart = function(reset) {
+        reset = reset || false;
+
+
+        if(reset) {
+            var url = '{{ path('site_cart_reset') }}';
+        } else {
+            var url = '{{ path('site_cart') }}';
+        }
 
         var $cartIcon = $('.cart-nav').find('.ico');
         var originalIcon = $cartIcon.prop('innerHTML');
@@ -139,9 +164,11 @@
             .attr('src', '/assets/images/loader.gif')
         ;
 
+        var originalHeight = $cartDropdown.css('height');
+
         var $secondLoader = $firstLoader.clone();
 
-        $cartDropdown.css('min-height', '60px').html($firstLoader.css({
+        $cartDropdown.css('min-height', originalHeight).html($firstLoader.css({
             height: '40px',
             width: '40px',
             margin: '10px',
@@ -158,11 +185,13 @@
         }).prop('outerHTML'));
 
         $.ajax({
-            url: '{{ path('site_cart') }}',
+            url: url,
             method: 'get',
             success: function(response) {
                 $cartIcon.html(originalIcon);
                 $cartDropdown.html(response)
+                $('.cart-btns > .btn-ghost').launchTunnel();
+                $('.cart-btns > .btn-block').resetCart();
             },
         });
 
@@ -257,7 +286,8 @@
 <script>
     jQuery(function($) {
         $('#nav-contact').find('a').launchTunnel();
-        $('.cart-nav').find('.cart-btns > a:first-child').launchTunnel();
+        $('.cart-btns > .btn-ghost').launchTunnel();
+        $('.cart-btns > .btn-block').resetCart();
         $('#nav-contact').find('a').launchTunnel();
     });
 </script>

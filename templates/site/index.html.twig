@@ -32,7 +32,7 @@
                         <div class="hero-content">
                             <h1 class="hero-lead">Venez <br/> vous <br/> détendre</h1>
                             <h4 class="h-alt hero-subheading wow fadeInUp">relaxation / rééquilibrage / contact émotionnel</h4>
-                            <a href="{{ path('category_show', {slugCategory: 'soins-energetiques'}) }}" class="btn btn-light wow fadeInDown">En savoir plus</a>
+                            <a href="#" class="btn btn-light wow fadeInDown">En savoir plus</a>
 
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                             <h4 class="h-alt hero-subheading">tarots / oracles / pendules</h4>
                             <h1 class="hero-lead"><span>Recevez votre</span> <br/> guidance divinatoire</h1>
 
-                            <a href="{{ path('category_show', {slugCategory: 'consultations-orales'}) }}" class="btn-light">En savoir plus</a>
+                            <a href="#" class="btn-light">En savoir plus</a>
 
                         </div>
                     </div>
@@ -140,7 +140,7 @@
 
             <header class="sec-heading">
                 <h2>Qui je suis ?</h2>
-                <span class="subheading">A votre service</span>
+                <span class="subheading">Moi</span>
             </header>
 
             <!-- Member 1 -->
@@ -153,7 +153,7 @@
                         <div class="t-description">
                             <div class="content-wrapper">
                                 <h4 class="h-alt">Intro</h4>
-                                <p></p>
+                                <p>Je m'appelle Steve David, j'ai {{ age }} ans et je suis originaire de Montpellier. Je suis développeur informatique à mon compte de profession et je possède ces capacités innées de guérison depuis toujours.</p>
                             </div>
                         </div>
                     </div>
@@ -233,6 +233,7 @@
     <script>
         jQuery(function($) {
             $('section').find('.btn-ghost').launchTunnel();
+            $('.fs-slider').find('.btn-light').launchTunnel();
         });
 
     </script>

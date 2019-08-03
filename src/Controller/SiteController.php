@@ -23,6 +23,19 @@ class SiteController extends AbstractController
 
         return $this->render('site/index.html.twig', [
             'services' => $services,
+            'age' => ((new \DateTime)->diff(\DateTime::createFromFormat('d/m/Y', '10/03/1988')))->y,
+        ]);
+    }
+
+    /**
+     * @Route("/presentation", name="site_presentation")
+     */
+    public function presentation()
+    {
+        $age = ((new \DateTime)->diff(new \DateTime('10-03-1988')))->y;
+
+        return $this->render('site/presentation.html.twig', [
+            'age' => $age,
         ]);
     }
 
@@ -34,6 +47,23 @@ class SiteController extends AbstractController
      */
     public function cart(Tunnel $tunnel)
     {
+        $cart = $tunnel->getCart();
+
+        return $this->render('includes/navigation/ajax/cart.html.twig', [
+            'cart' => $cart,
+        ]);
+    }
+
+    /**
+     * @Route("/reset_cart", name="site_cart_reset")
+     *
+     * @param Tunnel $tunnel
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function cartReset(Tunnel $tunnel)
+    {
+        $tunnel->reset();
+
         $cart = $tunnel->getCart();
 
         return $this->render('includes/navigation/ajax/cart.html.twig', [

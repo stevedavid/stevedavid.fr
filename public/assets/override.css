@@ -41,6 +41,10 @@
     max-width: 100% !important;
   }
 }
+#nav-social {
+  border-bottom: 1px solid #b2b1b2;
+}
+
 .bounce {
   -webkit-animation: bounce 0.5s infinite;
 }

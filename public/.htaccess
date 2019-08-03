@@ -66,3 +66,29 @@ DirectoryIndex index.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+
+# SEO Redirects
+## Full
+RedirectPermanent /contact http://stevedavid.fr/
+RedirectPermanent /services/mediumnite http://stevedavid.fr/
+RedirectPermanent /services/divination http://stevedavid.fr/
+RedirectPermanent /services/magnetisme http://stevedavid.fr/
+RedirectPermanent /services/autres http://stevedavid.fr/
+RedirectPermanent /blog/* http://stevedavid.fr/
+
+## Tunnel
+RedirectPermanent /prendre-rendez-vous/service http://stevedavid.fr/
+RedirectPermanent /prendre-rendez-vous/service/a-distance http://stevedavid.fr/
+
+# Services
+RedirectPermanent /services/autres/consultation-simple http://stevedavid.fr/services/consultations-orales/eveil-a-la-spiritualite
+RedirectPermanent /services/autres/purifier-un-lieu http://stevedavid.fr/services/consultations-orales/psychologie-divinatoire
+RedirectPermanent /services/magnetisme/vous-apaiser-physiquement http://stevedavid.fr/services/soins-energetiques/douleurs-physiques
+RedirectPermanent /services/magnetisme/vous-liberer-emotionnellement http://stevedavid.fr/services/soins-energetiques/stress-et-anxiete
+RedirectPermanent /services/divination/comprendre-votre-passe http://stevedavid.fr/services/consultations-orales/psychologie-divinatoire
+RedirectPermanent /services/magnetisme/vous-eveiller-spirituellement http://stevedavid.fr/services/consultations-orales/eveil-a-la-spiritualite
+RedirectPermanent /services/mediumnite/parler-avec-votre-ame http://stevedavid.fr/services/consultations-orales/etude-tarologique
+RedirectPermanent /services/mediumnite/contacter-un-proche-disparu http://stevedavid.fr/services/consultations-orales/eveil-a-la-spiritualite
+RedirectPermanent /services/divination/analyser-une-situation-presente http://stevedavid.fr/services/consultations-orales/etude-tarologique
+RedirectPermanent /services/mediumnite/appeler-vos-guides-spirituels http://stevedavid.fr/services/consultations-orales/eveil-a-la-spiritualite
+

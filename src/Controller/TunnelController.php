@@ -75,6 +75,7 @@ class TunnelController extends AbstractController
             $tunnel->setPrenom($prenom);
             $tunnel->setNom($nom);
 
+            $tunnel->sendMail();
             $session = new Session();
             return $this->render('tunnel/4.html.twig', [
                 'choice' => $session->get('choice'),

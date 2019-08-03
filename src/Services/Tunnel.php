@@ -52,13 +52,28 @@ class Tunnel
 
         return $cart;
     }
+    
+    public function reset()
+    {
+        $this->disponibilite = null;
+        $this->nom = null;
+        $this->prenom = null;
+        $this->service = null;
+        $this->telephone = null;
+        $this->session->invalidate();
+    }
+
+    public function sendMail()
+    {
+
+    }
 
     public function setDisponibilite($disponibilite)
     {
         $this->disponibilite = $disponibilite;
         $this->session->set('disponibilite', $disponibilite);
 
-        return;
+        return $this;
     }
 
     public function getDisponibilite()
@@ -71,7 +86,7 @@ class Tunnel
         $this->service = $service;
         $this->session->set('service', $service->getId());
 
-        return;
+        return $this;
     }
 
     private function getService()
@@ -104,6 +119,8 @@ class Tunnel
     {
         $this->nom = $nom;
         $this->session->set('nom', $nom);
+
+        return $this;
     }
 
     /**
@@ -121,6 +138,8 @@ class Tunnel
     {
         $this->prenom = $prenom;
         $this->session->set('prenom', $prenom);
+
+        return $this;
     }
 
     /**
@@ -138,6 +157,8 @@ class Tunnel
     {
         $this->telephone = $telephone;
         $this->session->set('telephone', $telephone);
+
+        return $this;
     }
 
 
